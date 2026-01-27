@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    {% include "components/navbar.html"%}
+<div class="d-flex flex-column justify-content-start gap-6" style="width: 100%; padding-top: 2px;">
+    {% include "components/header.html" with page_name="dashboard" sous_page_name=active_tab|capfirst %}
+
+    <div class="px-6 d-flex gap-3">
+        <a href="?tab=commercial" class="btn {% if active_tab == 'commercial' %}btn-primary{% else %}btn-outline-primary{% endif %}">
+            Analyse Commerciale
+        </a>
+        <a href="?tab=operational" class="btn {% if active_tab == 'operational' %}btn-primary{% else %}btn-outline-primary{% endif %}">
+            Analyse Opérationnelle
+        </a>
+    </div>
+
+    <div class="d-flex gap-9 flex-column px-6">
+        
+        {% if active_tab == 'commercial' %}
+            <div id="commercial-section" class="d-flex flex-column gap-4">
+                <div class="d-flex gap-4" style="width: 100%;">
+                    {% include "components/statistic-cards.html" with title="Volume d'expéditions" percentage=expedition_change.change_percent increase=expedition_change.is_increase description="vs période précédente" %}
+                    {% include "components/statistic-cards.html" with title="Chiffre d'Affaires" percentage=revenue_change.change_percent increase=revenue_change.is_increase description="Total facturé" %}
+                </div>
+                
+                <div class="d-flex gap-4" style="width: 100%;">
+                    {% include "components/line-chart.html" with chart_id="commercialTrendChart" %}
+                    {% include "components/horizontal-chart.html" with chart_id="destinationsChart" %}
+                </div>
+            </div>
+
+        {% else %}
+            <div id="operational-section" class="d-flex flex-column gap-4">
+                <div class="d-flex gap-4" style="width: 100%;">
+                    {% include "components/statistic-cards.html" with title="Tours de livraison" percentage=tour_evolution.change_percent increase=tour_evolution.is_increase %}
+                    {% include "components/statistic-cards.html" with title="Taux de réussite" percentage=delivery_success.success_rate increase=True %}
+                </div>
+
+                <div class="d-flex gap-4" style="width: 100%;">
+                    {% include "components/pie-chart.html" with chart_id="livraisonPieChart" %}
+                    {% include "components/bar-chart.html" with chart_id="activityBarChart" %}
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'js/components/chart.js' %}"></script>
+<script src="{% static 'js/components/line-chart.js' %}"></script>
+<script src="{% static 'js/components/horizontal.js' %}"></script>
+<script src="{% static 'js/components/bar-chart.js' %}"></script>
+</body>
+</html>

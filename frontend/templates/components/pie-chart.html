@@ -1,0 +1,24 @@
+<div class="chart-card py-4 px-5" style="border: solid 1px rgb(218, 218, 218); height: 450px;">
+    <p class="chart-title mt-2" style="font-size: 20px;">Taux de réussite des livraisons</p>
+    <div class="d-flex flex-column gap-2">
+        <canvas id="livraisonPieChart" class="chart-canvas p-3"></canvas>
+        <div class="chart-labels d-flex gap-6">
+            <div class="label-item">
+                <div class="dot success d-flex"></div>
+                <span>Réussites</span>
+            </div>
+
+            <div class="label-item d-flex">
+                <div class="dot failure"></div>
+                <span>Échecs</span>
+            </div>
+
+            <div class="label-item d-flex">
+                <div class="dot delay"></div>
+                <span>En retard</span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

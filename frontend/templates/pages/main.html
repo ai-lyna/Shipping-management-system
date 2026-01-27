@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    {% include "components/navbar.html" %}
+<div class="d-flex flex-column justify-content-start gap-4 " style="width: 100%; padding-top: 2px;"> <!-- whole content container-->
+    {% include "components/header.html" with page_name=table_name  %}
+
+    <div class="d-flex flex-column align-items-center justify-content-center px-4 gap-2"> <!-- table content container-->
+        <div class="table-frame overflow-hidden" style="width: 100%;">
+                <table class="table table-hover table-md table-outline" data-name="{{table_name}}">
+                    <thead>
+                        <tr id="table-head"></tr>
+                    </thead>
+                    <tbody id="table-body">
+                        
+                    </tbody>
+                </table>
+        </div>
+    {% include "components/paginator.html" with page_obj=page_obj %}
+    </div>
+</div>
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    {% include "components/view-modify-popup.html" %}
+    {% include "components/view-popup.html" %}
+    {{ data_structure|json_script:"data-structure" }}
+    {{ headers|json_script:"headers" }}
+    
+<script src="{% static 'js/yourfile.js' %}?v={{ APP_VERSION|default:'1.0.0' }}"></script>
+<script type="module" src="{% static 'js/main/main.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

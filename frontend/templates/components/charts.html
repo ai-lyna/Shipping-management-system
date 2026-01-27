@@ -1,0 +1,41 @@
+{% if name == "pie-charts" %}
+<div class="chart-card chart-card-lg">
+    <p class="chart-title">Taux de réussite des livraisons</p>
+
+    <canvas id="livraisonPieChart" class="chart-canvas"></canvas>
+
+    <div class="chart-labels">
+        <div class="label-item">
+            <span class="dot success"></span>
+            <span>Réussites</span>
+        </div>
+        <div class="label-item">
+            <span class="dot failure"></span>
+            <span>Échecs</span>
+        </div>
+        <div class="label-item">
+            <span class="dot delay"></span>
+            <span>En retard</span>
+        </div>
+    </div>
+</div>
+
+{% elif name == "bar-chart" %}
+<div class="chart-card chart-card-md">
+    <p class="chart-title">Périodes de forte activité</p>
+    <canvas id="activityBarChart" class="chart-canvas"></canvas>
+</div>
+
+{% elif name == "line-chart" %}
+<div class="chart-card chart-card-md">
+    <p class="chart-title">Nombre de tournées</p>
+    <canvas id="tourneesLineChart" class="chart-canvas"></canvas>
+</div>
+
+{% elif name == "horizontal-chart" %}
+<div class="chart-card chart-card-md">
+    <p class="chart-title">Top zones à incidents</p>
+    <canvas id="zonesBarChart" class="chart-canvas"></canvas>
+</div>
+
+{% endif %}

@@ -1,0 +1,156 @@
+@import '../bootstrap/scss/functions';
+
+// changing colors 
+
+$primary: #6610f2 ;
+$secondary: #fd7e14 ;
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary
+) ;
+
+$body-bg:                   #ffffff ;
+$body-color:                #000000  ;
+$border-color:              #dee2e6 ;
+
+//space 
+$spacer: 0.25rem ;
+$spacers: (
+  0: 0,
+  1: $spacer * 1,
+  2: $spacer * 2,
+  3: $spacer * 3,
+  4: $spacer * 4,
+  5: $spacer * 5,
+  6: $spacer * 6,
+  7: $spacer * 8,
+  8: $spacer * 9,
+  9: $spacer * 10
+) ;
+
+//border radius
+$border-radius:               0.25rem ;
+$border-radius-sm:            0.375rem ;
+$border-radius-lg:            0.5rem  ;
+$border-radius-xl:            0.75rem ;
+$border-radius-xxl:           1rem ;
+$border-radius-pill:          1.25rem ;
+
+//font 
+
+// Override default Bootstrap fonts
+$font-family-sans-serif: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif ;
+$font-family-monospace: 'Fira Code', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+$font-size-base:              1rem ; 
+$font-size-xs:                $font-size-base * 0.75 ;
+$font-size-sm:                $font-size-base * 0.875 ;
+$font-size-lg:                $font-size-base * 1.125 ;
+$font-size-xl:                $font-size-base * 1.25 ;
+
+$h1-font-size:                $font-size-base * 2.5 ;
+$h2-font-size:                $font-size-base * 2 ;
+$h3-font-size:                $font-size-base * 1.75 ;
+$h4-font-size:                $font-size-base * 1.5 ;
+
+$font-sizes: (
+  "xs": $font-size-xs,
+  "sm": $font-size-sm,
+  "md": $font-size-base,
+  "lg": $font-size-lg,
+  "xl": $font-size-xl
+);
+
+$display-font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size
+);
+
+$avatar-width: 4rem;
+$avatar-height: 4rem;
+$avatar-font-size: .8rem;
+$avatar-border-radius: 50em;
+$avatar-status-width: .5rem;
+$avatar-status-height: .5rem;
+$avatar-status-border-radius: 50em;
+$avatar-transition: margin .15s;
+
+$avatar-sizes: (
+  sm: (
+    width: 1.5rem,
+    height: 1.5rem,
+    font-size: .6rem,
+    status-width: .4rem,
+    status-height: .4rem
+  ),
+  md: (
+    width: 2.5rem,
+    height: 2.5rem,
+    font-size: 1rem,
+    status-width: .7rem,
+    status-height: .7rem
+  ),
+  lg: (
+    width: 3rem,
+    height: 3rem,
+    font-size: 1.2rem,
+    status-width: .8rem,
+    status-height: .8rem
+  ),
+  xl: (
+    width: 4rem,
+    height: 4rem,
+    font-size: 1.6rem,
+    status-width: 1rem,
+    status-height: 1rem
+  ),
+);
+
+$range-slider-track-width:                 100%;
+$range-slider-track-height:                .5rem;
+$range-slider-track-cursor:                pointer;
+$range-slider-track-bg:                    var(--#{$prefix}secondary-bg);
+$range-slider-track-border-radius:         1rem;
+$range-slider-track-box-shadow:            var(--#{$prefix}box-shadow-inset);
+
+$range-slider-track-in-range-bg:           rgba(var(--#{$prefix}primary-rgb), .5);
+$range-slider-disabled-track-in-range-bg:  rgba(var(--#{$prefix}secondary-rgb), .375);
+
+$range-slider-label-padding-y:             0;
+$range-slider-label-padding-x:             0;
+$range-slider-label-font-size:             $font-size-sm;
+$range-slider-label-color:                 var(--#{$prefix}body-color);
+
+$range-slider-thumb-width:                 1rem;
+$range-slider-thumb-height:                $range-slider-thumb-width;
+$range-slider-thumb-bg:                    $component-active-bg;
+$range-slider-thumb-border:                0;
+$range-slider-thumb-border-radius:         1rem;
+$range-slider-thumb-box-shadow:            0 .1rem .25rem rgba($black, .1);
+$range-slider-thumb-focus-box-shadow:      0 0 0 1px $body-bg, $input-focus-box-shadow;
+$range-slider-thumb-active-bg:             tint-color($primary, 70%);
+$range-slider-thumb-disabled-bg:           rgba(var(--#{$prefix}secondary-rgb), 1);
+$range-slider-thumb-transition:            background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+$range-slider-tooltip-padding-y:           $spacer * .25;
+$range-slider-tooltip-padding-x:           $spacer * .5;
+$range-slider-tooltip-margin-end:          .25rem;
+$range-slider-tooltip-margin-bottom:       .25rem;
+$range-slider-tooltip-font-size:           $font-size-sm;
+$range-slider-tooltip-color:               var(--#{$prefix}body-color);
+$range-slider-tooltip-bg:                  var(--#{$prefix}secondary-bg);
+$range-slider-tooltip-border-radius:       var(--#{$prefix}border-radius);
+$range-slider-tooltip-box-shadow:          var(--#{$prefix}box-shadow);
+$range-slider-tooltip-transition:          visibility .15s, opacity .15s ease;
+
+$range-slider-tooltip-arrow-width:         .8rem;
+$range-slider-tooltip-arrow-height:        .4rem;
+
+$range-slider-vertical-track-width:        .5rem;
+$range-slider-vertical-track-height:       10rem;
+
+@import '../bootstrap/scss/bootstrap';
