@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %} <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <title>Document</title>
+</head> 
+<body> 
+    {% include "components/navbar.html" %} 
+    <div class="d-flex flex-column justify-content-start gap-7" style="width: 100%; padding-top: 2px;"> <!-- whole content container--> 
+        {% include "components/header.html" with page_name="Favoris" %} 
+        <div class="d-flex flex-column align-items-start justify-content-center px-4 gap-4"> 
+            <div class="d-flex gap-5"> 
+                {% include "components/Favoris_card.html" with card_icon="bi-send" card_title="Expédition" card_body="Créer et planifier une nouvelle expédition" card_name="Expeditions" %} 
+                {% include "components/Favoris_card.html" with card_icon="bi-people" card_title="Client" card_body="Ajouter un Nouveau Client a votre liste" card_name="Clients" %} 
+                {% include "components/Favoris_card.html" with card_icon="bi-truck" card_title="Tournée" card_body="Planifier une nouvelle Tournee pour vos Expeditions" card_name="Tournees" %} 
+                {% include "components/Favoris_card.html" with card_icon="bi-box-seam" card_title="Colis" card_body="Ajouter un Colis " card_name="Colis" %} 
+            </div> 
+            <div class="d-flex gap-5"> 
+                {% include "components/Favoris_card.html" with card_icon="bi-map" card_title="Trajet" card_body="Ajouter un Trajet pour vos Tournees" card_name="Trajets" %} 
+                {% include "components/Favoris_card.html" with card_icon="bi-cash-stack" card_title="Paiement" card_body="Ajouter un paiement a la facture d'un client" card_name="Paiements" %} 
+                {% include "components/Favoris_card.html" with card_icon="bi-file-earmark-text" card_title="Facture" card_body="Ajouter la facture d'un client durant une Expedition" card_name="Factures" %} 
+            </div> 
+        </div> 
+    </div> 
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}"> 
+    {% include "components/view-popup.html" %} 
+<script type="module" src="{% static 'js/main/favoris.js' %}"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> 
+</body> 
+</html>

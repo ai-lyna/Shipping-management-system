@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
+from backend.Favoris import Favoris_views as view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -16,4 +17,5 @@ urlpatterns = [
     path('Incidents/', include('backend.incidents.urls')),
     path('Reclamations/', include('backend.reclamations.urls')),
     path('dashboard/', include('backend.dashboard.urls')),
+    path('Favoris/', view.favoris_view, name='Favoris'),
 ]
