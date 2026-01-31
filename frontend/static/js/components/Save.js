@@ -1,4 +1,4 @@
-export function saveLogic({ infoModalEl, modalBody, saveBtn, name, csrfToken }) {
+export function saveLogic({ infoModalEl,infoModal, modalBody, saveBtn, name, csrfToken }) {
   saveBtn.addEventListener("click", async () => {
     const mode = infoModalEl.dataset.mode;
     const id = infoModalEl.dataset.id;
@@ -33,7 +33,7 @@ export function saveLogic({ infoModalEl, modalBody, saveBtn, name, csrfToken }) 
       const data = await response.json();
       console.log("Saved successfully:", data);
 
-      infoModalEl.hide();
+      infoModal.hide();
 
     } catch (err) {
       console.error(err);

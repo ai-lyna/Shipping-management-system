@@ -11,12 +11,17 @@ def payment_info(request):
     return JsonResponse({
         "client": "number",
         "facture": "number",
-        "typePaiement": "string",
+        "typePaiement": {
+            "type": "choice",
+            "choices": [
+                {"value": "partiel", "label": "Partiel"},
+                {"value": "total", "label": "Total"},
+            ]
+        },
         "datePaiement": "string",
         "soldePaye": "number",
 
     })
-
 
 
 def payment_data(request):
@@ -27,9 +32,9 @@ def payment_data(request):
     sort_order = request.GET.get('sort', 'new')  
 
     if sort_order == 'old':
-         payments = Payment.objects.all().order_by('date_creation')  
+         payments = Payment.objects.all().order_by('datePaiement')  
     else:
-        payments = Payment.objects.all().order_by('-date_creation')  
+        payments = Payment.objects.all().order_by('-datePaiement')  
     paginator = Paginator(payments, 12) 
     page_nbr = request.GET.get("page") 
     page_obj = paginator.get_page(page_nbr) 

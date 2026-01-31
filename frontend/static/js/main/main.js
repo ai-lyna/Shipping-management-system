@@ -1,7 +1,7 @@
 import { tableLogic } from "../components/table.js";
-import { btnLogic } from "../components/modal.js";
+import { modalLogic } from "../components/modal.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   tableLogic(); 
-  btnLogic();
+  modalLogic();
 });

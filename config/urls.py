@@ -18,4 +18,5 @@ urlpatterns = [
     path('Reclamations/', include('backend.reclamations.urls')),
     path('dashboard/', include('backend.dashboard.urls')),
     path('Favoris/', view.favoris_view, name='Favoris'),
+    path('Payment/', include('backend.payment.urls')),
 ]

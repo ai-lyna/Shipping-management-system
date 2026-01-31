@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'backend.dashboard',
     'backend.Trajet',
     'backend.tarification',
+    'backend.payment',
 ]
 
 MIDDLEWARE = [

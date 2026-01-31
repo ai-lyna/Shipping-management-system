@@ -17,7 +17,20 @@
             </div>
 
             {% if page_name == "dashboard" %}
-                
+
+            {% elif page_name == "Favoris" %}
+                <form method="GET" action="" class="px-4">
+                    <div class="position-relative">
+                        <input type="search" class="form-control pe-4 rounded-3 py-1.5" 
+                            placeholder="Search" aria-label="Search" id="search" name="search" 
+                            value="{{ query }}">
+                        <button type="submit" style="position:absolute; top:50%; right:5px; transform:translateY(-50%); border:none; background:none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search text-muted" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>                            </svg>
+                        </button>
+                    </div>
+                </form>
 
             {% else %}
             <div class="d-flex flex-column justify-content-ce align-items-center gap-3" style="width: 100%;"> <!-- all buttons container-->
@@ -84,13 +97,14 @@
                         </ul>
                     </div>
 
-                    {% elif page_name == "Factures" or page_name == "Paiement" %}
+                    {% elif page_name == "Factures" or page_name == "Payment" %}
                     <div class="dropdown ">
                         <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{page_name}}
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'Factures' %}">Facture</a></li>
+                            <li><a class="dropdown-item" href="{% url 'Payment' %}">Payment</a></li>
                         </ul>
                     </div>
                     {% elif page_name == "Incidents" or page_name == "Reclamations" %}
