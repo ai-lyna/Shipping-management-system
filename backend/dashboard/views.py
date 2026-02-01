@@ -60,7 +60,6 @@ def dashboard(request , tab=None):
     context = {'active_tab': active_tab}
 
     if active_tab == 'commercial':
-        # Fetch commercial data
         commercial_data = DashboardCalculator.get_commercial_analysis()
         context.update({
             'expedition_change': commercial_data['expedition_change'],
@@ -71,7 +70,6 @@ def dashboard(request , tab=None):
         })
 
     elif active_tab == 'operational':
-        # Fetch operational data
         operational_data = DashboardCalculator.get_operational_analysis()
         context.update({
             'tour_evolution': operational_data['tour_evolution'],

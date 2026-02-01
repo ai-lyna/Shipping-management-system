@@ -3,6 +3,7 @@ import { saveLogic } from "./Save.js";
 import { editLogic } from "./Edit.js";
 import { deleteLogic } from "./Delete.js";
 import { viewLogic } from "./View.js";
+import { printLogic } from "./Print.js";
 
 export function modalLogic() {
   const table = document.querySelector("table[data-name]");
@@ -19,6 +20,7 @@ export function modalLogic() {
   const editBtn = document.getElementById("editBtn");
   const viewBtn = document.getElementById("viewBtn");
   const deleteBtn = document.getElementById("deleteBtn");
+  const printBtn = document.getElementById("printBtn");
 
   const csrfToken = document.querySelector("[name=csrfmiddlewaretoken]")?.value;
 
@@ -34,6 +36,8 @@ export function modalLogic() {
 
       viewBtn.disabled = checked.length !== 1;
       editBtn.disabled = checked.length !== 1;
+      printBtn.disabled = checked.length !== 1 ;
+
     } else {
       actionBar.classList.add("d-none");
       actionBar.classList.remove("d-flex");
@@ -56,6 +60,8 @@ export function modalLogic() {
   viewLogic({ infoModalEl, infoModal, modalBody, viewBtn, name });
 
   deleteLogic({ deleteBtn, name });
+
+  printLogic({ name });
 
 
   infoModalEl.addEventListener("hidden.bs.modal", () => {

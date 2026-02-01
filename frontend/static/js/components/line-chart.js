@@ -1,6 +1,8 @@
 function renderTourneesLineChart(data) {
-    const ctx = document.getElementById('tourneesLineChart').getContext('2d');
+    const canvas = document.getElementById('tourneesLineChart');
+    if (!canvas) return; 
 
+    const ctx = canvas.getContext('2d');
     // Destroy previous chart if exists
     if (window.myChart) {
         window.myChart.destroy();

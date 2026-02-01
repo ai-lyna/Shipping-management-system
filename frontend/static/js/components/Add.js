@@ -5,9 +5,6 @@ export function addBtnLogic({ addBtnId, infoModalEl, infoModal, modalBody, saveB
 
   addBtn.addEventListener("click", async () => {
     try {
-      saveBtn.classList.remove("d-none");
-      saveBtn.classList.add("d-inline-flex");
-
       await openAddModal({ infoModalEl, infoModal, modalBody, name });
     } catch (err) {
       console.error("Add button error:", err);

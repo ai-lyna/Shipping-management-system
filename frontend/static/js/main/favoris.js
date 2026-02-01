@@ -1,36 +1,43 @@
 import { openAddModal } from "../components/AddModal.js";
 import { saveLogic } from "../components/Save.js";
 
-export function favorisLogic({ infoModalEl, infoModal, modalBody, saveBtn, csrfToken }) {
-  let currentName = null;
+export function favorisLogic() {
+    const infoModalEl = document.getElementById("infoModal");
+    if (!infoModalEl) return;
 
-  const cards = document.querySelectorAll(".fav-card");
+    const infoModal = new bootstrap.Modal(infoModalEl);
+    const modalBody = infoModalEl.querySelector(".modal-body");
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value;
 
-  cards.forEach(card => {
-    card.addEventListener("click", async () => {
-      currentName = card.dataset.cardName;
+    const cards = document.querySelectorAll(".fav-card");
 
-      saveBtn.classList.remove("d-none");
-      saveBtn.classList.add("d-inline-flex");
+    cards.forEach(card => {
+        card.addEventListener("click", async () => {
+            const name = card.dataset.cardName;
 
-      await openAddModal({
-        infoModalEl,
-        infoModal,
-        modalBody,
-        name: currentName
-      });
+            await openAddModal({
+                infoModalEl,
+                infoModal,
+                modalBody,
+                name: name
+            });
+
+            const activeSaveBtn = infoModalEl.querySelector("#saveBtn");
+
+            if (activeSaveBtn) {
+                saveLogic({ 
+                    infoModalEl, 
+                    infoModal, 
+                    modalBody, 
+                    saveBtn: activeSaveBtn,
+                    name, 
+                    csrfToken 
+                });
+            } else {
+                console.error("Save button still not found after openAddModal!");
+            }
+        });
     });
-  });
-
-  // attach ONCE
-  saveLogic({
-    infoModalEl,
-    infoModal,
-    modalBody,
-    saveBtn,
-    csrfToken,
-    getName: () => currentName
-  });
 }
 
 favorisLogic();

@@ -1,6 +1,8 @@
 function renderActivityBarChart(data) {
-    const ctx = document.getElementById('activityBarChart').getContext('2d');
+    const canvas = document.getElementById('activityBarChart');
+    if (!canvas) return; 
 
+    const ctx = canvas.getContext('2d');
     // Destroy previous chart if exists
     if (window.activityChart) {
         window.activityChart.destroy();

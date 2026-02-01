@@ -27,27 +27,29 @@
         {% if active_tab == 'commercial' %}
             <div id="commercial-section" class="d-flex flex-column gap-4">
                 <div class="d-flex gap-4" style="width: 100%;">
-                    {% include "components/statistic-cards.html" with title="Volume d'expéditions" percentage=expedition_change.change_percent increase=expedition_change.is_increase description="vs période précédente" %}
-                    {% include "components/statistic-cards.html" with title="Chiffre d'Affaires" percentage=revenue_change.change_percent increase=revenue_change.is_increase description="Total facturé" %}
+                    {% include "components/statistic-cards.html" with title="Volume d'expéditions" percentage="2" increase=expedition_change.is_decrease description="vs période précédente" %}
+                    {% include "components/statistic-cards.html" with title="Chiffre d'Affaires" percentage="25" increase=revenue_change.is_increase description="Total facturé" %}
                 </div>
                 
                 <div class="d-flex gap-4" style="width: 100%;">
-                    {% include "components/line-chart.html" with chart_id="commercialTrendChart" %}
-                    {% include "components/horizontal-chart.html" with chart_id="destinationsChart" %}
+                    {% include "components/line-chart.html" %}
+                    {% include "components/horizontal-chart.html"%}
                 </div>
+                {% include "components/card.html" with card_title="Top Clients" %}
             </div>
 
         {% else %}
             <div id="operational-section" class="d-flex flex-column gap-4">
                 <div class="d-flex gap-4" style="width: 100%;">
-                    {% include "components/statistic-cards.html" with title="Tours de livraison" percentage=tour_evolution.change_percent increase=tour_evolution.is_increase %}
-                    {% include "components/statistic-cards.html" with title="Taux de réussite" percentage=delivery_success.success_rate increase=True %}
+                    {% include "components/statistic-cards.html" with title="Tours de livraison" percentage="10" increase=tour_evolution.is_increase description="Évolution des tournées"%}
+                    {% include "components/statistic-cards.html" with title="Taux de réussite" percentage="15" increase=True description="Livraisons réussies" %}
                 </div>
 
                 <div class="d-flex gap-4" style="width: 100%;">
-                    {% include "components/pie-chart.html" with chart_id="livraisonPieChart" %}
-                    {% include "components/bar-chart.html" with chart_id="activityBarChart" %}
+                    {% include "components/pie-chart.html" %}
+                    {% include "components/bar-chart.html"%}
                 </div>
+                {% include "components/card.html" with card_title="Top Chauffeurs" %}
             </div>
         {% endif %}
 
@@ -55,6 +57,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="{% static 'js/components/chart.js' %}"></script>
 <script src="{% static 'js/components/line-chart.js' %}"></script>
 <script src="{% static 'js/components/horizontal.js' %}"></script>
