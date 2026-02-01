@@ -1,0 +1,20 @@
+[
+  {"model": "logistics.vehicule", "pk": 1, "fields": {"numImmat": "123-ABC-45", "type_vehicule": "Camion", "capacitePoids": 12.5, "capaciteVolume": 35.0, "consommationCarburant": 25.0, "disponibilite": "Dispo"}},
+  {"model": "logistics.vehicule", "pk": 2, "fields": {"numImmat": "456-DEF-78", "type_vehicule": "Fourgon", "capacitePoids": 8.0, "capaciteVolume": 20.0, "consommationCarburant": 18.5, "disponibilite": "onRoute"}},
+  {"model": "logistics.vehicule", "pk": 3, "fields": {"numImmat": "789-GHI-12", "type_vehicule": "Camion", "capacitePoids": 14.0, "capaciteVolume": 40.0, "consommationCarburant": 26.0, "disponibilite": "maint"}},
+  {"model": "logistics.vehicule", "pk": 4, "fields": {"numImmat": "321-JKL-34", "type_vehicule": "Camion", "capacitePoids": 13.0, "capaciteVolume": 38.0, "consommationCarburant": 24.0, "disponibilite": "Dispo"}},
+  {"model": "logistics.vehicule", "pk": 5, "fields": {"numImmat": "654-MNO-56", "type_vehicule": "Fourgon", "capacitePoids": 7.5, "capaciteVolume": 18.0, "consommationCarburant": 17.0, "disponibilite": "onRoute"}},
+  {"model": "logistics.vehicule", "pk": 6, "fields": {"numImmat": "987-PQR-78", "type_vehicule": "Camion", "capacitePoids": 15.0, "capaciteVolume": 42.0, "consommationCarburant": 27.0, "disponibilite": "Dispo"}},
+  {"model": "logistics.vehicule", "pk": 7, "fields": {"numImmat": "159-STU-90", "type_vehicule": "Fourgon", "capacitePoids": 8.5, "capaciteVolume": 22.0, "consommationCarburant": 19.0, "disponibilite": "maint"}},
+  {"model": "logistics.vehicule", "pk": 8, "fields": {"numImmat": "753-VWX-12", "type_vehicule": "Camion", "capacitePoids": 13.5, "capaciteVolume": 36.0, "consommationCarburant": 25.5, "disponibilite": "Dispo"}},
+  {"model": "logistics.vehicule", "pk": 9, "fields": {"numImmat": "852-YZA-34", "type_vehicule": "Fourgon", "capacitePoids": 9.0, "capaciteVolume": 23.0, "consommationCarburant": 20.0, "disponibilite": "onRoute"}},
+  {"model": "logistics.vehicule", "pk": 10, "fields": {"numImmat": "951-BCD-56", "type_vehicule": "Camion", "capacitePoids": 14.5, "capaciteVolume": 39.0, "consommationCarburant": 26.5, "disponibilite": "Dispo"}},
+  {"model": "logistics.vehicule", "pk": 11, "fields": {"numImmat": "147-EFG-78", "type_vehicule": "Fourgon", "capacitePoids": 8.0, "capaciteVolume": 20.0, "consommationCarburant": 18.0, "disponibilite": "Dispo"}},
+  {"model": "logistics.vehicule", "pk": 12, "fields": {"numImmat": "258-HIJ-90", "type_vehicule": "Camion", "capacitePoids": 12.0, "capaciteVolume": 34.0, "consommationCarburant": 24.5, "disponibilite": "onRoute"}},
+  {"model": "logistics.vehicule", "pk": 13, "fields": {"numImmat": "369-KLM-12", "type_vehicule": "Camion", "capacitePoids": 13.0, "capaciteVolume": 37.0, "consommationCarburant": 25.0, "disponibilite": "maint"}},
+  {"model": "logistics.vehicule", "pk": 14, "fields": {"numImmat": "741-NOP-34", "type_vehicule": "Fourgon", "capacitePoids": 7.0, "capaciteVolume": 19.0, "consommationCarburant": 17.5, "disponibilite": "Dispo"}},
+  {"model": "logistics.vehicule", "pk": 15, "fields": {"numImmat": "852-QRS-56", "type_vehicule": "Camion", "capacitePoids": 15.5, "capaciteVolume": 41.0, "consommationCarburant": 27.0, "disponibilite": "Dispo"}},
+  {"model": "logistics.vehicule", "pk": 16, "fields": {"numImmat": "963-TUV-78", "type_vehicule": "Fourgon", "capacitePoids": 8.5, "capaciteVolume": 21.0, "consommationCarburant": 19.5, "disponibilite": "onRoute"}},
+  {"model": "logistics.vehicule", "pk": 17, "fields": {"numImmat": "159-WXY-90", "type_vehicule": "Camion", "capacitePoids": 14.0, "capaciteVolume": 38.0, "consommationCarburant": 26.0, "disponibilite": "Dispo"}},
+  {"model": "logistics.vehicule", "pk": 18, "fields": {"numImmat": "753-ZAB-12", "type_vehicule": "Fourgon", "capacitePoids": 9.0, "capaciteVolume": 22.0, "consommationCarburant": 20.0, "disponibilite": "Dispo"}}
+]

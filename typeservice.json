@@ -1,0 +1,14 @@
+[
+  {"model": "typeservice.typeservice", "pk": 1, "fields": {"typeService": "standard", "Delai": 5}},
+  {"model": "typeservice.typeservice", "pk": 2, "fields": {"typeService": "express", "Delai": 2}},
+  {"model": "typeservice.typeservice", "pk": 3, "fields": {"typeService": "international", "Delai": 10}},
+  {"model": "typeservice.typeservice", "pk": 4, "fields": {"typeService": "overnight", "Delai": 1}},
+  {"model": "typeservice.typeservice", "pk": 5, "fields": {"typeService": "priority", "Delai": 3}},
+  {"model": "typeservice.typeservice", "pk": 6, "fields": {"typeService": "economy", "Delai": 7}},
+  {"model": "typeservice.typeservice", "pk": 7, "fields": {"typeService": "bulk", "Delai": 12}},
+  {"model": "typeservice.typeservice", "pk": 8, "fields": {"typeService": "fragile", "Delai": 4}},
+  {"model": "typeservice.typeservice", "pk": 9, "fields": {"typeService": "coldChain", "Delai": 6}},
+  {"model": "typeservice.typeservice", "pk": 10, "fields": {"typeService": "medical", "Delai": 2}},
+  {"model": "typeservice.typeservice", "pk": 11, "fields": {"typeService": "hazardous", "Delai": 8}},
+  {"model": "typeservice.typeservice", "pk": 12, "fields": {"typeService": "customs", "Delai": 15}}
+]

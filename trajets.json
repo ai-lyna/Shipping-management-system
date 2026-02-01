@@ -1,0 +1,19 @@
+[
+  {"model": "Trajet.trajet", "pk": 1, "fields": {"kilometrage": 120.5, "duree": "02:15:00", "consommation_carb": 18.2}},
+  {"model": "Trajet.trajet", "pk": 2, "fields": {"kilometrage": 350.0, "duree": "06:30:00", "consommation_carb": 42.8}},
+  {"model": "Trajet.trajet", "pk": 3, "fields": {"kilometrage": 75.3, "duree": "01:40:00", "consommation_carb": 9.5}},
+  {"model": "Trajet.trajet", "pk": 4, "fields": {"kilometrage": 540.0, "duree": "09:10:00", "consommation_carb": 65.0}},
+  {"model": "Trajet.trajet", "pk": 5, "fields": {"kilometrage": 210.8, "duree": "04:05:00", "consommation_carb": 25.7}},
+  {"model": "Trajet.trajet", "pk": 6, "fields": {"kilometrage": 680.4, "duree": "11:45:00", "consommation_carb": 82.1}},
+  {"model": "Trajet.trajet", "pk": 7, "fields": {"kilometrage": 95.0, "duree": "02:00:00", "consommation_carb": 11.3}},
+  {"model": "Trajet.trajet", "pk": 8, "fields": {"kilometrage": 420.6, "duree": "07:20:00", "consommation_carb": 50.9}},
+  {"model": "Trajet.trajet", "pk": 9, "fields": {"kilometrage": 160.0, "duree": "03:10:00", "consommation_carb": 19.8}},
+  {"model": "Trajet.trajet", "pk": 10, "fields": {"kilometrage": 300.2, "duree": "05:50:00", "consommation_carb": 36.4}},
+  {"model": "Trajet.trajet", "pk": 11, "fields": {"kilometrage": 480.0, "duree": "08:10:00", "consommation_carb": 58.5}},
+  {"model": "Trajet.trajet", "pk": 12, "fields": {"kilometrage": 250.0, "duree": "04:40:00", "consommation_carb": 30.0}},
+  {"model": "Trajet.trajet", "pk": 13, "fields": {"kilometrage": 135.5, "duree": "02:20:00", "consommation_carb": 16.5}},
+  {"model": "Trajet.trajet", "pk": 14, "fields": {"kilometrage": 560.0, "duree": "09:30:00", "consommation_carb": 67.0}},
+  {"model": "Trajet.trajet", "pk": 15, "fields": {"kilometrage": 300.0, "duree": "05:55:00", "consommation_carb": 37.0}},
+  {"model": "Trajet.trajet", "pk": 16, "fields": {"kilometrage": 80.0, "duree": "01:45:00", "consommation_carb": 10.0}},
+  {"model": "Trajet.trajet", "pk": 17, "fields": {"kilometrage": 520.5, "duree": "08:50:00", "consommation_carb": 63.5}}
+]

@@ -17,5 +17,7 @@ class TypeService(models.Model):
         unique=True
     )
 
+    Delai = models.PositiveIntegerField(help_text="Delivery delay in days")
+
     def __str__(self):
         return self.typeService
