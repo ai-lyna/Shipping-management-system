@@ -32,7 +32,7 @@ export function printLogic({ name }) {
         </style>
       </head><body>`;
 
-      content += `<h1>Détails - ${name.charAt(0).toUpperCase() + name.slice(1)} #${id}</h1>`;
+      content += `<h1>Détails - ${name.charAt(0).toUpperCase() + name.slice(1)} ${id}</h1>`;
 
       for (let key in data) {
         const label = key.replaceAll('_', ' ').charAt(0).toUpperCase() + key.slice(1);
