@@ -8,12 +8,22 @@ from django.core.paginator import Paginator
 def expedition_info(request):
     return JsonResponse({
         "client": "number",
-        "statut": "string",
+       "statut": {
+        "type": "choice",
+        "choices": [
+            { "value": "trsit", "label": "En transit" },
+            { "value": "centri", "label": "En tri" },
+            { "value": "encourslivr", "label": "En cours" },
+            { "value": "livr", "label": "Livrée" },
+            { "value": "echec", "label": "Échec" }
+        ]
+    },
+             
         "numBureau": "number",
         "tournee": "number",
         "type_service": "number",
     })
-
+  
 
 def expedition_data(request):
 

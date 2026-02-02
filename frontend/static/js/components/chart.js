@@ -1,6 +1,8 @@
 function renderLivraisonChart(data) {
-    const ctx = document.getElementById('livraisonPieChart').getContext('2d');
+    const canvas = document.getElementById('livraisonPieChart');
+    if (!canvas) return; 
 
+    const ctx = canvas.getContext('2d');
     // Destroy previous chart if exists
     if (window.livraisonChart) {
         window.livraisonChart.destroy();

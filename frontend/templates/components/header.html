@@ -1,7 +1,7 @@
-        <div class="d-flex flex-column justify-content-start gap-4 " style="width: 100%; padding-top: 2px;">
-            <div class="px-4 d-flex gap-xxl-4 align-items-center py-4 divisor-buttom justify-content-between align-items-center" style="width: 100%;" > <!-- header container-->
+        <div class="d-flex flex-column justify-content-start gap-4" style="width: 100%; padding-top: 2px;">
+            <div class="px-4 d-flex gap-xxl-4 align-items-center divisor-buttom justify-content-between align-items-center" style="width: 100%; height: 74.5px;" > <!-- header container-->
                 <h3>{{ page_name }}</h3>
-                <div class="d-flex gap-3 justify-content-between align-items-center">
+                <!-- <div class="d-flex gap-3 justify-content-betwrign-items-center">
                     <button class="btn btn-secondary btn-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
                         <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
@@ -13,11 +13,24 @@
                         <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5"/>
                         </svg>
                     Share</button>
-                </div>
+                </div> -->
             </div>
 
             {% if page_name == "dashboard" %}
-                
+
+            {% elif page_name == "Favoris" %}
+                <form method="GET" action="" class="px-4">
+                    <div class="position-relative">
+                        <input type="search" class="form-control pe-4 rounded-3 py-1.5" 
+                            placeholder="Search" aria-label="Search" id="search" name="search" 
+                            value="{{ query }}">
+                        <button type="submit" style="position:absolute; top:50%; right:5px; transform:translateY(-50%); border:none; background:none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search text-muted" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>                            </svg>
+                        </button>
+                    </div>
+                </form>
 
             {% else %}
             <div class="d-flex flex-column justify-content-ce align-items-center gap-3" style="width: 100%;"> <!-- all buttons container-->
@@ -72,7 +85,7 @@
                         </ul>
                     </div>
 
-                    {% elif page_name == "Expeditions" or page_name == "Tournees" or page_name == "Colis" %}
+                    {% elif page_name == "Expeditions" or page_name == "Tournees" or page_name == "Colis"  or page_name == "Trajets"%}
                     <div class="dropdown ">
                         <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{page_name}}
@@ -81,16 +94,18 @@
                             <li><a class="dropdown-item" href="{% url 'Expeditions' %}">Expedition</a></li>
                             <li><a class="dropdown-item" href="{% url 'Tournees' %}">Tournee</a></li>   
                             <li><a class="dropdown-item" href="{% url 'Colis' %}">Colis</a></li>
+                            <li><a class="dropdown-item" href="{% url 'Trajets' %}">Trajets</a></li>
                         </ul>
                     </div>
 
-                    {% elif page_name == "Factures" or page_name == "Paiement" %}
+                    {% elif page_name == "Factures" or page_name == "Payment" %}
                     <div class="dropdown ">
                         <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{page_name}}
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'Factures' %}">Facture</a></li>
+                            <li><a class="dropdown-item" href="{% url 'Payment' %}">Payment</a></li>
                         </ul>
                     </div>
                     {% elif page_name == "Incidents" or page_name == "Reclamations" %}
@@ -98,7 +113,7 @@
                     {% endif %}
                     
                     <div class="d-flex gap-3 justify-content-between align-items-center" {%if page_name == "Incidents" or page_name == "Reclamations" %} style="width: 100%;" {% endif %}> <!-- print + add button container-->
-                        <button class="btn btn-secondary btn-md gap-2">
+                        <button class="btn btn-secondary btn-md gap-2" id="printBtn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
                             <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
                             <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1"/>
